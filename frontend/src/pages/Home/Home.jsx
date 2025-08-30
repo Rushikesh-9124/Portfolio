@@ -58,7 +58,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="flex-1 text-center space-y-2 animate-slide-up py-3">
+        <div className="flex-1 text-center space-y-2 animate-slide-up py-5">
           <h1
             className="
               text-4xl lg:text-5xl xl:text-7xl font-extrabold 
