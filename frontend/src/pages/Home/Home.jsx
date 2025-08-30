@@ -58,7 +58,7 @@ const Home = () => {
             alt=""
           />
         </div>
-        <div className="flex-1 text-center space-y-2">
+        <div className="flex-1 text-center space-y-2 max-md:mb-3">
           <h1
             className="
               text-4xl
@@ -90,10 +90,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Typing animation applied here */}
       <div className="bg-white/1 max-md:mt-10 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center">
         {typedAbout}
-        <span className="animate-pulse">|</span> {/* cursor */}
+        <span className="animate-pulse">|</span> 
       </div>
 
       <div className="w-full h-auto flex items-center justify-center gap-3">
