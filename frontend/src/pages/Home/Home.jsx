@@ -90,7 +90,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white/1 max-md:mt-20 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center">
+      <div className="bg-white/1 max-md:mt-20 max-md:text-sm leading-7 text-white/60 px-5 pt-15 rounded-md text-center">
         {typedAbout}
         <span className="animate-pulse">|</span> 
       </div>
