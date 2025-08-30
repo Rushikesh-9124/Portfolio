@@ -58,7 +58,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="flex-1 text-center space-y-2 animate-slide-up py-5">
+        <div className="flex-1 text-center space-y-2 animate-slide-up  mb-5">
           <h1
             className="
               text-4xl lg:text-5xl xl:text-7xl font-extrabold 
@@ -91,7 +91,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white/1 max-md:mt-10 mt-5 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center animate-fade-in">
+      <div className="bg-white/1 max-md:mt-5 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center animate-fade-in">
         {typedAbout}
         {!typingDone && <span className="animate-pulse">|</span>}
       </div>
