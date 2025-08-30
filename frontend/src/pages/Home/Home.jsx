@@ -46,8 +46,8 @@ const Home = () => {
   }, [data?.about]);
 
   return (
-    <div className="w-full h-full py-17 gap-5 px-5 md:px-15 space-y-3 flex flex-col overflow-auto ">
-      <div className="flex max-md:flex-col items-center justify-evenly h-[50%] gap-10 md:gap-20 mt-10">
+    <div className="w-full h-full py-17 gap-5 px-5 md:px-15  flex flex-col overflow-auto ">
+      <div className="flex max-md:flex-col items-center justify-evenly h-[50%] space-y-3 gap-10 md:gap-20 mt-10">
       
         <div className="w-[25%] flex items-center justify-start max-md:justify-center">
           <img
