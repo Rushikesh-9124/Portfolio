@@ -60,20 +60,22 @@ const Home = () => {
 
         <div className="flex-1 text-center space-y-2 animate-slide-up px-3 mb-5">
           <h1
-            className="
-              text-4xl lg:text-5xl xl:text-7xl font-extrabold 
-              relative inline-block
-              bg-gradient-to-r from-white/60 via-[#d1d1d1] to-[#bcb9b9]
-              bg-clip-text text-transparent 
-              overflow-hidden
-            "
-          >
-            <span className="mr-2">{data?.firstName}</span>
-            <span>{data?.lastName}</span>
+  className="
+    text-4xl lg:text-5xl xl:text-7xl font-extrabold 
+    relative inline-block
+    bg-gradient-to-r from-white/60 via-[#d1d1d1] to-[#bcb9b9]
+    bg-clip-text text-transparent 
+    overflow-hidden
+  "
+>
+  <span className="mr-2">{data?.firstName}</span>
+  <span>{data?.lastName}</span>
 
+  <span className="absolute top-0 left-0 w-full h-full animate-shine 
+    bg-gradient-to-tr from-transparent via-white/60 to-transparent 
+    pointer-events-none"></span>
+</h1>
 
-            <span className="absolute inset-0 animate-shine bg-gradient-to-tr from-transparent via-white/60 to-transparent"></span>
-          </h1>
 
           <p className="text-gray-400 text-md mb-4 ">{data?.tagLine}</p>
 
