@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "../../components/ui/button";
 import { MdAttachEmail } from "react-icons/md";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import axiosInstance from "@/healper/axiosInstance";
 import { toast } from "sonner";
 
-const icons = { FaLinkedin, MdAttachEmail, FaGithub, FaXTwitter };
+const icons = {
+  FaLinkedin,
+  MdAttachEmail,
+  FaGithub,
+  FaXTwitter,
+};
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [typedAbout, setTypedAbout] = useState("");
-  const [typingDone, setTypingDone] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -27,64 +33,55 @@ const Home = () => {
     fetchData();
   }, []);
 
+  // Typing effect for "about"
   useEffect(() => {
     if (!data?.about) return;
     let i = 0;
-    setTypedAbout("");
-    setTypingDone(false);
-
+    setTypedAbout(""); // reset when about changes
     const interval = setInterval(() => {
       setTypedAbout((prev) => prev + data.about[i]);
       i++;
-      if (i === data.about.length) {
-        clearInterval(interval);
-        setTypingDone(true);
-      }
-    }, 40);
+      if (i === data.about.length) clearInterval(interval);
+    }, 40); // speed
 
     return () => clearInterval(interval);
   }, [data?.about]);
 
   return (
-    <div className="w-full h-full py-17 gap-5 px-5 md:px-15  flex flex-col overflow-auto ">
-      <div className="flex max-md:flex-col items-center justify-evenly h-[50%] space-y-3 gap-10 md:gap-20 mt-10">
-      
+    <div className="w-full h-full py-17 gap-5 px-5 md:px-15 flex flex-col overflow-auto ">
+      <div className="flex max-md:flex-col items-center justify-evenly h-[50%] gap-10 md:gap-20 mt-10">
         <div className="w-[25%] flex items-center justify-start max-md:justify-center">
           <img
             draggable="false"
-            className="w-full min-w-[200px] h-auto rounded-full shadow-xl animate-fade-in"
+            className="w-full min-w-[200px] h-auto rounded-full"
             src={data?.profileImg}
             alt=""
           />
         </div>
-
-        <div className="flex-1 text-center space-y-2 animate-slide-up px-3 mb-5">
+        <div className="flex-1 text-center space-y-2">
           <h1
-  className="
-    text-4xl lg:text-5xl xl:text-7xl font-extrabold 
-    relative inline-block
-    bg-gradient-to-r from-white/60 via-[#d1d1d1] to-[#bcb9b9]
-    bg-clip-text text-transparent 
-    overflow-hidden
-  "
->
-  <span className="mr-2">{data?.firstName}</span>
-  <span>{data?.lastName}</span>
-
-  <span className="absolute top-0 left-0 w-full h-full animate-shine 
-    bg-gradient-to-tr from-transparent via-white/60 to-transparent 
-    pointer-events-none"></span>
-</h1>
-
+            className="
+              text-4xl
+              lg:text-5xl
+              xl:text-7xl font-extrabold 
+              bg-gradient-to-r from-white/60 via-[#d1d1d1] to-[#bcb9b9]
+              bg-clip-text text-transparent 
+              text-wrap
+              md:space-x-3
+              max-md:flex 
+              bg-[length:200%_200%] animate-shimmer
+            "
+          >
+            <span className="mr-2">{data?.firstName}</span>
+            <span>{data?.lastName}</span>
+          </h1>
 
           <p className="text-gray-400 text-md mb-4 ">{data?.tagLine}</p>
-
-          {/* Passionate In */}
           <div className="flex flex-wrap gap-3 justify-center ">
             {data?.passionateIn?.map((item, idx) => (
               <p
                 key={idx}
-                className="bg-gray-200/60 py-1 px-1 md:px-2 lg:py-2 rounded-md transition-all duration-300 hover:scale-105"
+                className="bg-gray-200/60 py-1 px-1 md:px-2 lg:py-2 rounded-md "
               >
                 {item}
               </p>
@@ -93,9 +90,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white/1 max-md:mt-5 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center animate-fade-in">
+      {/* Typing animation applied here */}
+      <div className="bg-white/1 max-md:mt-10 max-md:text-sm leading-7 text-white/60 px-5 py-15 rounded-md text-center">
         {typedAbout}
-        {!typingDone && <span className="animate-pulse">|</span>}
+        <span className="animate-pulse">|</span> {/* cursor */}
       </div>
 
       <div className="w-full h-auto flex items-center justify-center gap-3">
@@ -104,8 +102,7 @@ const Home = () => {
           return (
             <a
               key={idx}
-              className="p-3.5 rounded-full flex items-center justify-center bg-gray-400/50 
-              transition-all duration-300 hover:scale-110 hover:bg-gray-400/70"
+              className="p-3.5 rounded-full flex items-center justify-center bg-gray-400/50"
               href={item.link}
               target="_blank"
             >
