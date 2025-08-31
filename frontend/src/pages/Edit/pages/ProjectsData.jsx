@@ -252,7 +252,7 @@ const ProjectsData = () => {
         </div>
       </div>
       <div className="w-full  border border-gray-400/20 mt-10 p-5 rounded-lg">
-        <h3 className="text-3xl font-medium ">Manage Skills</h3>
+        <h3 className="text-3xl font-medium ">Manage Projects</h3>
         <div className="w-full max-sm:mx-auto p-3 grid max-sm:gap-5 max-sm:grid-cols-1 sm:grid-cols-2 space-y-4 lg:grid-cols-3 xl:grid-cols-4">
           {data.map((item, idx) => (
             <div key={idx} className="relative group transition-all duration-300">
