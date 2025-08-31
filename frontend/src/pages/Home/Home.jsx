@@ -91,8 +91,7 @@ const Home = () => {
       </div>
 
       <div className="bg-white/1 max-md:mt-20 max-md:text-sm leading-7 max-md:mt-5 text-white/60 px-5 pt-15 rounded-md text-center">
-        {typedAbout}
-        <span className="animate-pulse">|</span> 
+        {data?.about}
       </div>
 
       <div className="w-full h-auto flex items-center justify-center gap-3">
