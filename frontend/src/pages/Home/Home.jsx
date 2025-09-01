@@ -33,23 +33,10 @@ const Home = () => {
     fetchData();
   }, []);
 
-  // Typing effect for "about"
-  useEffect(() => {
-    if (!data?.about) return;
-    let i = 0;
-    setTypedAbout(""); // reset when about changes
-    const interval = setInterval(() => {
-      setTypedAbout((prev) => prev + data.about[i]);
-      i++;
-      if (i === data.about.length) clearInterval(interval);
-    }, 40); // speed
-
-    return () => clearInterval(interval);
-  }, [data?.about]);
 
   return (
     <div className="w-full h-full py-17 gap-5 px-5 md:px-15 flex flex-col overflow-auto ">
-      <div className="flex max-md:flex-col items-center justify-evenly h-[50%] gap-10 md:gap-20 mt-10">
+      <div className="flex max-md:flex-col items-center justify-center gap-10 md:gap-20 mt-10">
         <div className="w-[25%] flex items-center justify-start max-md:justify-center">
           <img
             draggable="false"
@@ -58,7 +45,7 @@ const Home = () => {
             alt=""
           />
         </div>
-        <div className="flex-1 text-center space-y-2 max-md:mb-3">
+        <div className="flex-1 text-center space-y-2">
           <h1
             className="
               text-4xl
@@ -90,8 +77,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-white/1 max-md:mt-20 max-md:text-sm leading-7 md:mt-5 text-white/60 px-5 pt-15 rounded-md text-center">
-        {data?.about}
+      <div className="bg-white/1  max-md:text-sm leading-7 text-white/60 px-5 py-10 md:mt-2  md:pt-15 rounded-md text-center">
+        {data.about}
       </div>
 
       <div className="w-full h-auto flex items-center justify-center gap-3">
