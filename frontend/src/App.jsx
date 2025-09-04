@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="relative">
       <div className="w-full  h-screen bg-gradient-to-tr from-black from-70% via-black via-75% to-lime-900/95  px-8 py-10 flex items-center justify-center ">
-      <Toaster />
+      <Toaster richColors />
       {showNavbar  && <div className="absolute transition-all duration-700 z-500 top-0 left-0 w-full  bg-black/40  h-full md:hidden">
         <div className="absolute min-w-[200px] bg-black h-full">
         <Navbar setShowNavbar={setShowNavbar} className='max-w-[200px]' />
